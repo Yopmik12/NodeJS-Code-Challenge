@@ -1,0 +1,41 @@
+{
+  "name": "nodejs-code-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:seed": "sequelize-cli db:seed:all",
+    "db:g:seed": "sequelize-cli seed:generate --name",
+    "db:g:migration": "sequelize-cli migration:generate --name",
+    "db:create": "node src/database/setup-database.js",
+    "db:check:connection": "node src/database/check-connection.js",
+    "test": "jest -i --silent --colors --verbose",
+    "db:create:all": "npm run db:create && npm run db:migrate && npm run db:seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "helmet": "^7.1.0",
+    "http-status": "^1.7.4",
+    "joi": "^17.12.2",
+    "mysql2": "^3.9.2",
+    "sequelize": "^6.37.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "winston": "^3.12.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7",
+    "supertest": "^6.3.4"
+  }
+}
